@@ -45,8 +45,8 @@ export class StatusComponent implements OnInit {
       score3: ['', Validators.required],
       option4: ['', Validators.required],
       score4: ['', Validators.required],
-      status:[''],
-      comment:['']
+      status:['', Validators.required],
+      comment:['', Validators.required]
     });
     if(this.userRole === 'user'){
       this.status.disable();
@@ -157,6 +157,9 @@ export class StatusComponent implements OnInit {
      this.submitted = true;
      this.questionnaire=question;
      this.questionnaire.stack='Java';
+     if(this.questionnaire.status === "Under Review"||this.questionnaire.status === "Accepted"){
+        this.questionCreationForm.disable();
+     }
    }
    hideModal(){
     var myElement = document.getElementById("updateQuestionModal");
