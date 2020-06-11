@@ -45,7 +45,7 @@ export class DashboardComponent implements OnInit {
     return this.activeEventType;
   }
   getEventsDetailsOfType(){
-    this.eventService.getEventsDetailsOfType("345678").subscribe((res:any) => {
+    this.eventService.getEventsDetailsOfType("123456").subscribe((res:any) => {
       console.log(res);
       this.eventDetailsCount=res;
     }, err => {
@@ -53,7 +53,7 @@ export class DashboardComponent implements OnInit {
     });
   }
   getNominated(eventId){
-    this.eventService.getNominated(this.setEventType,"345678",eventId).subscribe((res:any) => {
+    this.eventService.getNominated(this.setEventType,"123456",eventId).subscribe((res:any) => {
       console.log(res);
       this.eventDetailsCount=res;
     }, err => {

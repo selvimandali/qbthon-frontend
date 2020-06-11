@@ -132,16 +132,16 @@ export class CreateQuestioniareComponent implements OnInit {
     }
   }
     this.questionnaire.eventId = this.event.id;
-    this.questionnaire.userId = "345678";
+    this.questionnaire.userId = "123456";
     const data = new FormData();
     if (this.quesFiles.length > 0) {
       console.log("hello");
       data.append('quesFile', this.quesFiles[0]);
-      data.append('userId',"345678");
+      data.append('userId',"123456");
       data.append('eventId',this.event.id);
     }else{
       data.append('questionnaire',JSON.stringify(this.questionnaire));
-      data.append('userId',"345678");
+      data.append('userId',"123456");
       data.append('eventId',this.event.id);
       console.log(this.questionnaire);
     }
